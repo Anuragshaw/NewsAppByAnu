@@ -1,9 +1,15 @@
-import React, { Component } from 'react'
-import {
-    Link
-} from "react-router-dom";
+import React from 'react';
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
+
+    const handleNavLinkClick = () => {
+        const navbarCollapse = document.getElementById('navbarSupportedContent');
+        if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
+        }
+    };
+
     return (
         <div>
             <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -15,33 +21,32 @@ const NavBar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                                <Link className="nav-link active" aria-current="page" to="/" onClick={handleNavLinkClick}>Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/business">Business</Link>
+                                <Link className="nav-link" to="/business" onClick={handleNavLinkClick}>Business</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/entertainment">Entertainment</Link>
+                                <Link className="nav-link" to="/entertainment" onClick={handleNavLinkClick}>Entertainment</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/health">Health</Link>
+                                <Link className="nav-link" to="/health" onClick={handleNavLinkClick}>Health</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/science">Science</Link>
+                                <Link className="nav-link" to="/science" onClick={handleNavLinkClick}>Science</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/sports">Sports</Link>
+                                <Link className="nav-link" to="/sports" onClick={handleNavLinkClick}>Sports</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/technology">Technology</Link>
+                                <Link className="nav-link" to="/technology" onClick={handleNavLinkClick}>Technology</Link>
                             </li>
-
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;
